@@ -1,21 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
+    <title>Mi Página Semántica</title>
 </head>
 <body>
-    <h2>Formulario de registro</h2>
-    <p>Escribe tus datos de usuario en el siguiente formulario y
-        por ultimo aprieta el boton enviar.
-    </p>
 
-    <form action="http://www.miweb/procesarformulario" method="post"></form>
-    <p>
-        <label for="usuario">Usuario</label>
-        <input name="password" type="text" maxlength="16" />
+    <!-- 1 y 2: Estructura semántica correcta -->
+    <header>
+        <h1>Bienvenido a Mi Página</h1>
+        <nav>
+            <ul>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="https://www.google.com" target="_blank">Google</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    </p>
+    <main>
+        <!-- 3: Barra de navegación secundaria -->
+        <nav>
+            <ul>
+                <li><a href="#articulo1">Artículo 1</a></li>
+                <li><a href="#articulo2">Artículo 2</a></li>
+                <li><a href="#articulo3">Artículo 3</a></li>
+            </ul>
+        </nav>
+
+        <!-- 2: Estructurar blog -->
+        <section id="blog">
+            <article id="articulo1">
+                <h2>Artículo 1</h2>
+                <p>Contenido del primer artículo del blog.</p>
+            </article>
+            <article id="articulo2">
+                <h2>Artículo 2</h2>
+                <p>Contenido del segundo artículo del blog.</p>
+            </article>
+            <article id="articulo3">
+                <h2>Artículo 3</h2>
+                <p>Contenido del tercer artículo del blog.</p>
+            </article>
+        </section>
+
+        <!-- 4: Sección de contacto con validaciones -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Formulario de Contacto</legend>
+
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" min="1" max="120" required><br><br>
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea><br><br>
+
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpiar">
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- 5: Imagen con alt accesible -->
+        <section>
+            <h2>Galería</h2>
+            <img src="https://via.placeholder.com/150" alt="Descripción de la imagen de ejemplo">
+        </section>
+
+        <!-- 6: Tabla de datos -->
+        <section>
+            <h2>Datos de Contacto Registrados</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan Pérez</td>
+                        <td>30</td>
+                        <td>juan@example.com</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total de registros: 1</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- 7: Formulario de registro -->
+        <section>
+            <h2>Registro de Usuario</h2>
+            <form action="#" method="post">
+                <label for="nombreRegistro">Nombre:</label>
+                <input type="text" id="nombreRegistro" name="nombreRegistro" required><br><br>
+
+                <label for="apellidoRegistro">Apellido:</label>
+                <input type="text" id="apellidoRegistro" name="apellidoRegistro" required><br><br>
+
+                <label for="telefonoRegistro">Teléfono:</label>
+                <input type="tel" id="telefonoRegistro" name="telefonoRegistro" required><br><br>
+
+                <label for="direccionRegistro">Dirección:</label>
+                <input type="text" id="direccionRegistro" name="direccionRegistro"><br><br>
+
+                <label for="gustosRegistro">Gustos:</label>
+                <input type="text" id="gustosRegistro" name="gustosRegistro"><br><br>
+
+                <label for="generoRegistro">Género:</label>
+                <select id="generoRegistro" name="generoRegistro">
+                    <option value="">Seleccione...</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select><br><br>
+
+                <button type="submit">Registrar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Página Web</p>
+    </footer>
+
 </body>
 </html>
